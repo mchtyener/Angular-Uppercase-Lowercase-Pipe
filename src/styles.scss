@@ -1,0 +1,21 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+body {
+  background-color: #e2e2e2;
+}
+
+.valid-feedback {
+  display: block !important;
+  width: 100%;
+  margin-top: .25rem;
+  font-size: 80%;
+  color: #0cc06c;
+}
+
+.invalid-feedback {
+  display: block !important;
+  width: 100%;
+  margin-top: .25rem;
+  font-size: 80%;
+  color: #dc3545;
+}

@@ -1,0 +1,39 @@
+<div class="card col-md-4 mx-auto d-block">
+  <div class="card-body">
+    <ng-container [formGroup]="data">
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+          <label for="input1">Nome *</label>
+          <input type="text" class="form-control" id="input1" placeholder="Nome"
+                 formControlName="name"
+                 uppercase
+                 name="name"
+                 [ngClass]="{ 'is-invalid': form.name.errors && (form.name.touched || form.name.dirty) }"
+                 required/>
+          <div class="invalid-feedback"
+               *ngIf="form.name.errors && (form.name.dirty || form.name.touched)">
+            <div *ngIf="(form.name.invalid || form.name.errors)">* Campo obrigatório</div>
+          </div>
+        </div>
+        <div class="form-group mb-3 col-md-6">
+          <label for="input2">Email *</label>
+          <input type="text" class="form-control" id="input2" placeholder="Email"
+                 formControlName="email"
+                 lowercase
+                 name="email"
+                 [ngClass]="{ 'is-invalid': form.email.errors && (form.email.touched || form.email.dirty) }"
+                 required
+          />
+          <div class="invalid-feedback"
+               *ngIf="form.email.errors && (form.email.dirty || form.email.touched)">
+            <div *ngIf="form.email.errors">* Campo obrigatório</div>
+            <div *ngIf="form.email.errors">* Digite um e-mail válido</div>
+          </div>
+        </div>
+      </div>
+      <button [disabled]="data.status == 'INVALID'" type="button" class="btn btn-primary" (click)="submitForm()">
+        Salvar
+      </button>
+    </ng-container>
+  </div>
+</div>
